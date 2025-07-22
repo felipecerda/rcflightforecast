@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RC Plane Flying Weather Checker</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">RC Plane Weather Checker</h1>
+
+        <div class="mb-4">
+            <label for="locationInput" class="block text-gray-700 text-sm font-bold mb-2 text-left">RC Club Location:</label>
+            <input type="text" id="locationInput" placeholder="e.g., Cologne, Germany or 50.9375, 6.9603" value="Cologne, Germany">
+        </div>
+
+        <div class="mb-4">
+            <label for="windThreshold" class="block text-gray-700 text-sm font-bold mb-2 text-left">Max Wind Speed (km/h):</label>
+            <input type="number" id="windThreshold" value="25" min="0">
+        </div>
+
+        <div class="mb-4">
+            <label for="windowDuration" class="block text-gray-700 text-sm font-bold mb-2 text-left">Desired Flying Window:</label>
+            <select id="windowDuration">
+                <option value="1">1 Hour</option>
+                <option value="2">2 Hours</option>
+                <option value="3">3 Hours</option>
+                <option value="4">4 Hours</option>
+                <option value="5">5 Hours</option>
+                <option value="6">6 Hours</option>
+                <option value="7">7 Hours</option>
+                <option value="8">8 Hours</option>
+            </select>
+        </div>
+
+        <div class="mb-4">
+            <label for="freeTimeStart" class="block text-gray-700 text-sm font-bold mb-2 text-left">Free Time Start (daily):</label>
+            <input type="time" id="freeTimeStart" value="09:00">
+        </div>
+
+        <div class="mb-6">
+            <label for="freeTimeEnd" class="block text-gray-700 text-sm font-bold mb-2 text-left">Free Time End (daily):</label>
+            <input type="time" id="freeTimeEnd" value="17:00">
+            <p class="text-xs text-gray-500 mt-1 text-left">Note: Free time must be within a single day (e.g., 09:00 to 17:00, not 22:00 to 02:00).</p>
+        </div>
+
+        <button id="checkWeatherBtn">Check Weather for Flying</button>
+
+        <div id="messageBox" class="message-box"></div>
+        <div id="loadingSpinner" class="loading-spinner"></div>
+
+        <div id="daySelector" class="day-selector hidden">
+            <!-- Day buttons will be injected here -->
+        </div>
+
+        <div id="resultsSection" class="results-section hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Suitable Flying Windows</h2>
+            <ul id="resultsList" class="results-list">
+                <!-- Results will be injected here -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

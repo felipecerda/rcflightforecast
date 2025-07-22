@@ -1,0 +1,155 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top to prevent jumping */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 50px; /* Add some margin from the top */
+}
+input[type="text"], input[type="number"], input[type="time"], select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+    padding: 20px 25px; /* Keep padding for internal spacing */
+    min-height: 70px; /* Set a minimum height for the button */
+    border-radius: 8px;
+    font-size: 20px; /* Slightly increased font size */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+    display: flex; /* Use flexbox to center content vertically */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+}
+button:hover {
+    background-color: #2563eb; /* Blue-600 */
+    transform: translateY(-2px);
+}
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(59, 130, 246, 0.3);
+}
+.message-box {
+    background-color: #fef3c7; /* Yellow-100 */
+    color: #92400e; /* Yellow-800 */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    border: 1px solid #fde68a; /* Yellow-200 */
+    text-align: left;
+    display: none; /* Hidden by default */
+}
+.message-box.error {
+    background-color: #fee2e2; /* Red-100 */
+    color: #991b1b; /* Red-800 */
+    border-color: #fca5a5; /* Red-200 */
+}
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #3b82f6;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    display: none; /* Hidden by default */
+    margin: 20px auto;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.results-section {
+    margin-top: 30px;
+    text-align: left;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
+.results-section h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 15px;
+}
+.results-list {
+    list-style: none;
+    padding: 0;
+}
+.results-list li {
+    background-color: #eff6ff; /* Blue-50 */
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #bfdbfe; /* Blue-200 */
+    font-size: 16px;
+    color: #1e3a8a; /* Blue-900 */
+}
+.results-list li strong {
+    color: #1d4ed8; /* Blue-700 */
+}
+/* Day selector styling */
+.day-selector {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 15px;
+}
+.day-button {
+    background-color: #e0e7ff; /* Indigo-100 */
+    color: #4338ca; /* Indigo-700 */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin: 5px;
+    flex: 1 1 auto; /* Allow buttons to grow and shrink */
+    max-width: 120px; /* Max width for each button */
+    text-align: center;
+    border: 1px solid #c7d2fe; /* Indigo-200 */
+}
+.day-button:hover {
+    background-color: #c7d2fe; /* Indigo-200 */
+    transform: translateY(-1px);
+}
+.day-button.selected {
+    background-color: #4f46e5; /* Indigo-600 */
+    color: white;
+    box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+    transform: translateY(-2px);
+}
+.day-button.no-windows {
+    background-color: #fecaca; /* Red-200 */
+    color: #7f1d1d; /* Red-900 */
+    border-color: #ef4444; /* Red-500 */
+}
+.day-button.has-windows {
+    background-color: #d1fae5; /* Green-100 */
+    color: #065f46; /* Green-800 */
+    border-color: #34d399; /* Green-400 */
+}
